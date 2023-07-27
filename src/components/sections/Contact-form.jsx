@@ -11,10 +11,16 @@ const ContactForm = () => {
         .then((result) => {
             console.log(result.text);
             alert('Sent Successfully')
+
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], textarea');
+              inputs.forEach(input => input.value = ''); // Reset the input fields
+
         }, (error) => {
             console.log(error.text);
             alert('Try again')
         });
+
+      
     };
   
     return (
